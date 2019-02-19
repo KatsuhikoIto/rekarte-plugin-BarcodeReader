@@ -23,6 +23,9 @@
 
         <header-file src="src/ios/PGMyPlugin.h" />
         <source-file src="src/ios/PGMyPlugin.m" />
+        <header-file src="src/ios/QRViewController3.h" />
+        <source-file src="src/ios/QRViewController3.m" />
         <framework src="QuartzCore.framework" />
+
     </platform>
 </plugin>
