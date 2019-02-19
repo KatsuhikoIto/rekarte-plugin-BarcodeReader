@@ -12,7 +12,7 @@
 
     <!-- ios -->
     <platform name="ios">
-        <js-module src="www/QrcodeReader.js" name="device">
+        <js-module src="www/QrcodeReader.js" name="PGMyPlugin">
             <clobbers target="PGMyPlugin" />
         </js-module>
         <config-file target="config.xml" parent="/*">
