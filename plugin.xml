@@ -1,0 +1,31 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android" id="rekarte-plugin-BarcodeReader" version="1.0.0">
+    <name>rekarte-plugin-BarcodeReader</name>
+    <description>Barcode reader Plugin for rekarte</description>
+    <license>Apache 2.0</license>
+    <keywords>rekarte</keywords>
+    <repo>https://github.com/iflagri/rekarte-plugin-BarcodeReader.git</repo>
+
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/QrcodeReader.js" name="device">
+            <clobbers target="PGMyPlugin" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="PGMyPlugin">
+                <param name="ios-package" value="PGMyPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/PGMyPlugin.h" />
+        <source-file src="src/ios/PGMyPlugin.m" />
+        <framework src="AVFoundation.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="CoreVideo.framework" />
+        <framework src="ImageIO.framework" />
+        <framework src="QuartzCore.framework" />
+    </platform>
+</plugin>
