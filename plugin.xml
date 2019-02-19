@@ -23,11 +23,6 @@
 
         <header-file src="src/ios/PGMyPlugin.h" />
         <source-file src="src/ios/PGMyPlugin.m" />
-        <framework src="AVFoundation.framework" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="CoreMedia.framework" />
-        <framework src="CoreVideo.framework" />
-        <framework src="ImageIO.framework" />
         <framework src="QuartzCore.framework" />
     </platform>
 </plugin>
