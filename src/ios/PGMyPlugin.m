@@ -84,6 +84,10 @@
 }
 
 #pragma mark -delegate
+
+/**
+ * @param str 読み取ったQRコードの文字列
+ */
 - (void) closeView : (NSString *) str {
     // 画面を正常終了させるために、画面表示中の場合クローズ処理をタイマー起動
     if (view.isBeingPresented || str) {
@@ -127,16 +131,13 @@
     
     // メッセージを返す(正常終了：コード／キャンセル：未設定／エラー：エラーメッセージ)
     CDVPluginResult *result = nil;
-    NSString *ret = nil;
     if ([status isEqualToNumber:@0]) {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:msg];
-        ret = [result toSuccessCallbackString:callbackId];
+        [self.commandDelegate sendPluginResult:result callbackId:callbackId];
     } else {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:msg];
-        ret = [result toErrorCallbackString:callbackId];
+        [self.commandDelegate sendPluginResult:result callbackId:callbackId];
     }
-    [self writeJavascript:ret];
-
     // 初期化
     view.delegate = nil;
     view = nil;
