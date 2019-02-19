@@ -1,0 +1,2 @@
+# rekarte-plugin-BarcodeReader
+
