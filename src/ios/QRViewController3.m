@@ -171,7 +171,7 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     for (AVMetadataObject *metadata in metadataObjects) {
         NSString *code = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
-        AudioServicesPlaySystemSound(1313);
+        AudioServicesPlaySystemSound(1005);
         [self closeView:code];
     }
 }
